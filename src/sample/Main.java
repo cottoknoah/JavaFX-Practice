@@ -1,5 +1,6 @@
 package sample;
 
+//this is just an example to see if it runs
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

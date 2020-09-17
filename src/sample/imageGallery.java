@@ -1,6 +1,6 @@
 package sample;
 
-//This program is a simple application designed to show you a series of pictures of anime titles that
+//This program is a simple application designed to show you a series of pictures switching back and forth
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;

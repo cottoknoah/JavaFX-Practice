@@ -1,3 +1,5 @@
+//this program forms three checkboxes changing one lines format
+
 package sample;
 
 //imported all necessary classes for this application
