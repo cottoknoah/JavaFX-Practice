@@ -26,7 +26,90 @@ public class imageGallery extends Application
     @Override
     public void start(Stage primaryStage)
     {
+        //Module to add pictures to the array
+        //add "list.add("file:.jpg");" to add a new picture to the image gallery and add respective image to folder.
+        //searching for different images to display
+        try {
+            list.add("file:abyss.jpg");
+            list.add("file:BigO.jpg");
+            list.add("file:ditfxx.jpg");
+            list.add("file:eureka7.jpg");
+            list.add("file:fma.jpg");
+            list.add("file:gurrenlagann.jpg");
+            list.add("file:kos.jpg");
+            list.add("file:prisonschool.jpg");
+            list.add("file:overlord.jpg");
+            list.add("file:shieldhero.jpg");
+            list.add("file:tanya.jpg");
+            list.add("file:uzaki.jpg");
+//This module creates the panel and sets the stage for buttons and images inside it.
+            GridPane grid = new GridPane();
+            grid.setAlignment(Pos.CENTER);
+            grid.setPadding(new Insets(10, 10, 10, 10));
+//initialize buttons
+            Button LB = new Button("Previous");
+            Button RB = new Button("Next");
+//Sets up the array list size for the images
+            Image[] images = new Image[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                images[i] = new Image(list.get(i));
+            }
+//Image selector, iter shows which image in the array is being displayed.
+            ImageView view = new ImageView(images[iter]);
+//set this to true to force a width and height of 750 pixels. Pictures probably won't look right if you do.
+            view.setPreserveRatio(true);
+            view.setFitWidth(750);
+            view.setFitHeight(750);
+//This module handles actions performed by the mouse.
+            view.setCursor(Cursor.CLOSED_HAND);
+            view.setOnMousePressed(circleOnMousePressedEventHandler);
+            view.setOnMouseReleased(e -> {
+                orgReleaseSceneX = e.getSceneX();
+                if (orgCliskSceneX > orgReleaseSceneX)
+                {
+                    LB.fire();
+                }
+                else
+                {
+                    RB.fire();
+                }
+            });
+//This section handles actions performed when the "next" button is clicked.
+            RB.setOnAction(e -> {
+                iter = iter + 1;
+                if (iter == list.size())
+                {
+                    iter = 0;
+                }
+                view.setImage(images[iter]);
+            });
+//This section handles actions performed when the "previous" button is clicked.
+            LB.setOnAction(e -> {
+                iter = iter - 1;
+                if (iter == 0 || iter > list.size() + 1 || iter == -1)
+                {
+                    iter = list.size() - 1;
+                }
+                view.setImage(images[iter]);
+            });
+//This section creates the window in which the image and the buttons "next" & "previous" are displayed.
+            view.setFitHeight(750);
+            view.setFitWidth(750);
+            HBox hBox = new HBox();
+            hBox.setSpacing(15);
+            hBox.setAlignment(Pos.CENTER);
+            hBox.getChildren().addAll(LB, view, RB);
+            grid.add(hBox, 1, 1);
+            Scene scene = new Scene(grid, 1000, 750);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Anime you should watch!");
+            primaryStage.show();
+        }
+        catch (Exception e) {
 
+            e.printStackTrace();
+        }
+    }
     EventHandler<MouseEvent> circleOnMousePressedEventHandler = new EventHandler<>()
     {
         @Override
