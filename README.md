@@ -1,6 +1,6 @@
 # JavaFX-Practice
 
-* Purpose
+## Purpose
 - A personal repo built for practicing JavaFX.
 
 # Tasks
