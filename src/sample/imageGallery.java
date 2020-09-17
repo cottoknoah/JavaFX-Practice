@@ -23,6 +23,21 @@ public class imageGallery extends Application
     private List<String> list = new ArrayList<>();
     int iter = 0;
     double orgCliskSceneX, orgReleaseSceneX;
+    @Override
+    public void start(Stage primaryStage)
+    {
 
+    EventHandler<MouseEvent> circleOnMousePressedEventHandler = new EventHandler<>()
+    {
+        @Override
+        public void handle(MouseEvent click)
+        {
+            orgCliskSceneX = click.getSceneX();
+        }
+    };
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
 
 }
