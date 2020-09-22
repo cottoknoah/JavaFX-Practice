@@ -1,4 +1,4 @@
-package sample;
+package tutoring;
 
 //this is just an example to see if it runs
 import javafx.application.Application;

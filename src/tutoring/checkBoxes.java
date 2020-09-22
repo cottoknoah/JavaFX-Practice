@@ -1,6 +1,6 @@
 //this program forms three checkboxes changing one lines format
 
-package sample;
+package tutoring;
 
 //imported all necessary classes for this application
 import javafx.application.Application;

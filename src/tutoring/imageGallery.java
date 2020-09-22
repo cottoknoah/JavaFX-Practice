@@ -1,4 +1,4 @@
-package sample;
+package tutoring;
 
 //This program is a simple application designed to show you a series of pictures switching back and forth
 import javafx.application.Application;
