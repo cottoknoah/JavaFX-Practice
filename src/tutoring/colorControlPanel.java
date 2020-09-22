@@ -72,6 +72,11 @@ public class colorControlPanel extends Application
         blueHBox.setAlignment(Pos.CENTER);
 
         // INSERT CODE TO IMPLEMENT TEXT AREA
+        TextArea textArea = new textArea();
+        textArea.setText("Enter your text here");
+        textArea.setPrefColumnCount(15);
+        textArea.setPrefHeight(120);
+        textArea.setPrefWidth(300);
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER
 
