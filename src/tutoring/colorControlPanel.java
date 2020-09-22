@@ -1,11 +1,11 @@
-package sample;
+package tutoring;
 
 import javafx.application.Application;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 
 import javafx.scene.layout.HBox;
@@ -32,7 +32,12 @@ public class colorControlPanel extends Application
 
         // Create the Red label and slider
         Label redLabel = new Label("Red: ");
-
+        Slider redSlider = new Slider(MIN, MAX, INITIAL);
+        redSlider.setShowTickLabels(true);
+        redSlider.setShowTickMarks(true);
+        redSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
+        redSlider.setMinorTickCount(MINOR_TICK_COUNT);
+        redSlider.setBlockIncrement(10);
         // INSERT CODE HERE TO IMPLEMENT RED SLIDER
 
         HBox redHBox = new HBox(SPACING, redLabel, redSlider);
@@ -40,6 +45,12 @@ public class colorControlPanel extends Application
 
         // Create the Green label and slider
         Label greenLabel = new Label("Green: ");
+        Slider greenSlider = new Slider(MIN, MAX, INITIAL);
+        greenSlider.setShowTickLabels(true);
+        greenSlider.setShowTickMarks(true);
+        greenSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
+        greenSlider.setMinorTickCount(MINOR_TICK_COUNT);
+        greenSlider.setBlockIncrement(10);
 
         // INSERT CODE HERE TO IMPLEMENT GREEN SLIDER
 
@@ -48,6 +59,12 @@ public class colorControlPanel extends Application
 
         // Create the Blue label and slider
         Label blueLabel = new Label("Blue: ");
+        Slider blueSlider = new Slider(MIN, MAX, INITIAL);
+        blueSlider.setShowTickLabels(true);
+        blueSlider.setShowTickMarks(true);
+        blueSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
+        blueSlider.setMinorTickCount(MINOR_TICK_COUNT);
+        blueSlider.setBlockIncrement(10);
 
         // INSERT CODE HERE TO IMPLEMENT BLUE SLIDER
 
