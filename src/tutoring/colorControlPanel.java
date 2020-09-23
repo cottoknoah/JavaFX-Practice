@@ -17,15 +17,11 @@ import javafx.geometry.Insets;
 
 public class colorControlPanel extends Application {
 
-//    private Slider redSlider, greenSlider, blueSlider;
-
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         // Constants
         final double MIN = 0.0, MAX = 255.0, INITIAL = 0.0;
         final double MAJOR_TICK_UNIT = 15;
@@ -77,18 +73,24 @@ public class colorControlPanel extends Application {
         HBox blueHBox = new HBox(SPACING, blueLabel, blueSlider);
         blueHBox.setAlignment(Pos.CENTER);
 
-        // INSERT CODE TO IMPLEMENT TEXT AREA ---- USE -fx-text-fill
+        // INSERT CODE TO IMPLEMENT TEXT AREA
         TextArea textArea = new TextArea();
         textArea.setText("Enter your text here");
         textArea.setPrefColumnCount(15);
         textArea.setPrefHeight(120);
         textArea.setPrefWidth(300);
 
-        // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER
+        // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER  ---- USE -fx-text-fill
+
+
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
 
+
+
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE BLUE SLIDER
+
+
 
         // Add the controls to a VBox
         VBox vbox = new VBox(10, redHBox, greenHBox, blueHBox, textArea);
