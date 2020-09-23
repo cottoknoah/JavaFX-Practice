@@ -38,6 +38,7 @@ public class colorControlPanel extends Application {
         redSlider.setMinorTickCount(MINOR_TICK_COUNT);
         redSlider.setBlockIncrement(SPACING);
         redSlider.setPrefWidth(SLIDER_WIDTH);
+        redSlider.setSnapToTicks(true);
         // INSERT CODE HERE TO IMPLEMENT RED SLIDER
 
         HBox redHBox = new HBox(SPACING, redLabel, redSlider);
@@ -52,7 +53,7 @@ public class colorControlPanel extends Application {
         greenSlider.setMinorTickCount(MINOR_TICK_COUNT);
         greenSlider.setBlockIncrement(SPACING);
         greenSlider.setPrefWidth(SLIDER_WIDTH);
-
+        greenSlider.setSnapToTicks(true);
         // INSERT CODE HERE TO IMPLEMENT GREEN SLIDER
 
         HBox greenHBox = new HBox(SPACING, greenLabel, greenSlider);
@@ -67,7 +68,7 @@ public class colorControlPanel extends Application {
         blueSlider.setMinorTickCount(MINOR_TICK_COUNT);
         blueSlider.setBlockIncrement(SPACING);
         blueSlider.setPrefWidth(SLIDER_WIDTH);
-
+        blueSlider.setSnapToTicks(true);
         // INSERT CODE HERE TO IMPLEMENT BLUE SLIDER
 
         HBox blueHBox = new HBox(SPACING, blueLabel, blueSlider);
@@ -82,22 +83,28 @@ public class colorControlPanel extends Application {
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER  ---- USE -fx-text-fill
 
-
         // Add an event listener to each Slider control as a lambda expression
-        // Get the value of all three sliders
-        //
+        // Get the value of all three slider
         // Handle Slider value change events.
         redSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            textArea.setStyle("-fx-text-fill: red;");
+//            if () {
+//                textArea.setStyle("-fx-text-fill: red;");
+//            } else {
+//                resultInfo.setStyle("-fx-text-fill: red; -fx-font-size: 16px;");
+//            }
             System.out.println("Red Slider Value Changed (newValue: " + newValue.intValue() + ")");
         });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
         greenSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            textArea.setStyle("-fx-text-fill: green;");
             System.out.println("Green Slider Value Changed (newValue: " + newValue.intValue() + ")");
         });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE BLUE SLIDER
         blueSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            textArea.setStyle("-fx-text-fill: blue;");
             System.out.println("Blue Slider Value Changed (newValue: " + newValue.intValue() + ")");
         });
 
