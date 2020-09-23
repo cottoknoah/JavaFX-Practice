@@ -83,13 +83,23 @@ public class colorControlPanel extends Application {
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER  ---- USE -fx-text-fill
 
 
+        // Add an event listener to each Slider control as a lambda expression
+        // Get the value of all three sliders
+        //
+        // Handle Slider value change events.
+        redSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Red Slider Value Changed (newValue: " + newValue.intValue() + ")");
+        });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
-
-
+        greenSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Green Slider Value Changed (newValue: " + newValue.intValue() + ")");
+        });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE BLUE SLIDER
-
+        blueSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Blue Slider Value Changed (newValue: " + newValue.intValue() + ")");
+        });
 
 
         // Add the controls to a VBox
