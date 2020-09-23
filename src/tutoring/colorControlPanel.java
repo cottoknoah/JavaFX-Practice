@@ -14,15 +14,14 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
-public class colorControlPanel extends Application
-{
-    public static void main(String[] args)
-    {
+
+public class colorControlPanel extends Application {
+
+    public static void main(String[] args) {
         launch(args);
     }
 
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         // Constants
         final double MIN = 0.0, MAX = 255.0, INITIAL = 0.0;
         final double MAJOR_TICK_UNIT = 15;
@@ -37,7 +36,8 @@ public class colorControlPanel extends Application
         redSlider.setShowTickMarks(true);
         redSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
         redSlider.setMinorTickCount(MINOR_TICK_COUNT);
-        redSlider.setBlockIncrement(10);
+        redSlider.setBlockIncrement(SPACING);
+        redSlider.setPrefWidth(SLIDER_WIDTH);
         // INSERT CODE HERE TO IMPLEMENT RED SLIDER
 
         HBox redHBox = new HBox(SPACING, redLabel, redSlider);
@@ -50,7 +50,8 @@ public class colorControlPanel extends Application
         greenSlider.setShowTickMarks(true);
         greenSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
         greenSlider.setMinorTickCount(MINOR_TICK_COUNT);
-        greenSlider.setBlockIncrement(10);
+        greenSlider.setBlockIncrement(SPACING);
+        greenSlider.setPrefWidth(SLIDER_WIDTH);
 
         // INSERT CODE HERE TO IMPLEMENT GREEN SLIDER
 
@@ -64,7 +65,8 @@ public class colorControlPanel extends Application
         blueSlider.setShowTickMarks(true);
         blueSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
         blueSlider.setMinorTickCount(MINOR_TICK_COUNT);
-        blueSlider.setBlockIncrement(10);
+        blueSlider.setBlockIncrement(SPACING);
+        blueSlider.setPrefWidth(SLIDER_WIDTH);
 
         // INSERT CODE HERE TO IMPLEMENT BLUE SLIDER
 
@@ -72,12 +74,33 @@ public class colorControlPanel extends Application
         blueHBox.setAlignment(Pos.CENTER);
 
         // INSERT CODE TO IMPLEMENT TEXT AREA
+        TextArea textArea = new TextArea();
+        textArea.setText("Enter your text here");
+        textArea.setPrefColumnCount(15);
+        textArea.setPrefHeight(120);
+        textArea.setPrefWidth(300);
 
-        // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER
+        // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER  ---- USE -fx-text-fill
+
+
+        // Add an event listener to each Slider control as a lambda expression
+        // Get the value of all three sliders
+        //
+        // Handle Slider value change events.
+        redSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Red Slider Value Changed (newValue: " + newValue.intValue() + ")");
+        });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
+        greenSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Green Slider Value Changed (newValue: " + newValue.intValue() + ")");
+        });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE BLUE SLIDER
+        blueSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Blue Slider Value Changed (newValue: " + newValue.intValue() + ")");
+        });
+
 
         // Add the controls to a VBox
         VBox vbox = new VBox(10, redHBox, greenHBox, blueHBox, textArea);
