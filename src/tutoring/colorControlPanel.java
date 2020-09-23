@@ -79,6 +79,13 @@ public class colorControlPanel extends Application
         textArea.setPrefWidth(300);
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER
+//        redSlider.addEventFilter(KeyEvent.ANY, new EventHandler<KeyEvent>() {
+//            @Override
+//            public void handle(KeyEvent event) {
+//                System.out.println("KeyEvent NO!");
+//                event.consume();
+//            }
+//        });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
 
