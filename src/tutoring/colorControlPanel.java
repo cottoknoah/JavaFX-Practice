@@ -14,8 +14,11 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
-public class colorControlPanel extends Application
-{
+
+public class colorControlPanel extends Application {
+
+//    private Slider redSlider, greenSlider, blueSlider;
+
     public static void main(String[] args)
     {
         launch(args);
@@ -37,7 +40,8 @@ public class colorControlPanel extends Application
         redSlider.setShowTickMarks(true);
         redSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
         redSlider.setMinorTickCount(MINOR_TICK_COUNT);
-        redSlider.setBlockIncrement(10);
+        redSlider.setBlockIncrement(SPACING);
+        redSlider.setPrefWidth(SLIDER_WIDTH);
         // INSERT CODE HERE TO IMPLEMENT RED SLIDER
 
         HBox redHBox = new HBox(SPACING, redLabel, redSlider);
@@ -50,7 +54,8 @@ public class colorControlPanel extends Application
         greenSlider.setShowTickMarks(true);
         greenSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
         greenSlider.setMinorTickCount(MINOR_TICK_COUNT);
-        greenSlider.setBlockIncrement(10);
+        greenSlider.setBlockIncrement(SPACING);
+        greenSlider.setPrefWidth(SLIDER_WIDTH);
 
         // INSERT CODE HERE TO IMPLEMENT GREEN SLIDER
 
@@ -64,28 +69,22 @@ public class colorControlPanel extends Application
         blueSlider.setShowTickMarks(true);
         blueSlider.setMajorTickUnit(MAJOR_TICK_UNIT);
         blueSlider.setMinorTickCount(MINOR_TICK_COUNT);
-        blueSlider.setBlockIncrement(10);
+        blueSlider.setBlockIncrement(SPACING);
+        blueSlider.setPrefWidth(SLIDER_WIDTH);
 
         // INSERT CODE HERE TO IMPLEMENT BLUE SLIDER
 
         HBox blueHBox = new HBox(SPACING, blueLabel, blueSlider);
         blueHBox.setAlignment(Pos.CENTER);
 
-        // INSERT CODE TO IMPLEMENT TEXT AREA
-        TextArea textArea = new textArea();
+        // INSERT CODE TO IMPLEMENT TEXT AREA ---- USE -fx-text-fill
+        TextArea textArea = new TextArea();
         textArea.setText("Enter your text here");
         textArea.setPrefColumnCount(15);
         textArea.setPrefHeight(120);
         textArea.setPrefWidth(300);
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER
-//        redSlider.addEventFilter(KeyEvent.ANY, new EventHandler<KeyEvent>() {
-//            @Override
-//            public void handle(KeyEvent event) {
-//                System.out.println("KeyEvent NO!");
-//                event.consume();
-//            }
-//        });
 
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
 
