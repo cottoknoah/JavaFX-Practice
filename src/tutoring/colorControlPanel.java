@@ -14,8 +14,14 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class colorControlPanel extends Application {
+
+    int red = 0;
+    int green = 0;
+    int blue = 0;
 
     public static void main(String[] args) {
         launch(args);
@@ -29,6 +35,7 @@ public class colorControlPanel extends Application {
         final double SLIDER_WIDTH = 512.0;
         final double SPACING = 10.0;
 
+
         // Create the Red label and slider
         Label redLabel = new Label("Red: ");
         Slider redSlider = new Slider(MIN, MAX, INITIAL);
@@ -38,6 +45,7 @@ public class colorControlPanel extends Application {
         redSlider.setMinorTickCount(MINOR_TICK_COUNT);
         redSlider.setBlockIncrement(SPACING);
         redSlider.setPrefWidth(SLIDER_WIDTH);
+        redSlider.setSnapToTicks(true);
         // INSERT CODE HERE TO IMPLEMENT RED SLIDER
 
         HBox redHBox = new HBox(SPACING, redLabel, redSlider);
@@ -52,7 +60,7 @@ public class colorControlPanel extends Application {
         greenSlider.setMinorTickCount(MINOR_TICK_COUNT);
         greenSlider.setBlockIncrement(SPACING);
         greenSlider.setPrefWidth(SLIDER_WIDTH);
-
+        greenSlider.setSnapToTicks(true);
         // INSERT CODE HERE TO IMPLEMENT GREEN SLIDER
 
         HBox greenHBox = new HBox(SPACING, greenLabel, greenSlider);
@@ -67,7 +75,7 @@ public class colorControlPanel extends Application {
         blueSlider.setMinorTickCount(MINOR_TICK_COUNT);
         blueSlider.setBlockIncrement(SPACING);
         blueSlider.setPrefWidth(SLIDER_WIDTH);
-
+        blueSlider.setSnapToTicks(true);
         // INSERT CODE HERE TO IMPLEMENT BLUE SLIDER
 
         HBox blueHBox = new HBox(SPACING, blueLabel, blueSlider);
@@ -80,27 +88,22 @@ public class colorControlPanel extends Application {
         textArea.setPrefHeight(120);
         textArea.setPrefWidth(300);
 
-        // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER  ---- USE -fx-text-fill
-
-
-        // Add an event listener to each Slider control as a lambda expression
-        // Get the value of all three sliders
-        //
-        // Handle Slider value change events.
+        // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE RED SLIDER
         redSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            red = (int) redSlider.getValue();
+            textArea.setStyle("-fx-text-fill: rgb(" + red + "," + green + "," + blue + ")");
             System.out.println("Red Slider Value Changed (newValue: " + newValue.intValue() + ")");
         });
-
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE GREEN SLIDER
         greenSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            System.out.println("Green Slider Value Changed (newValue: " + newValue.intValue() + ")");
+            green = (int) greenSlider.getValue();
+            textArea.setStyle("-fx-text-fill: rgb(" + red + "," + green + "," + blue + ")");
         });
-
         // INSERT CODE TO REGISTER AN EVENT HANDLER FOR THE BLUE SLIDER
         blueSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            System.out.println("Blue Slider Value Changed (newValue: " + newValue.intValue() + ")");
+            blue = (int) blueSlider.getValue();
+            textArea.setStyle("-fx-text-fill: rgb(" + red + "," + green + "," + blue + ")");
         });
-
 
         // Add the controls to a VBox
         VBox vbox = new VBox(10, redHBox, greenHBox, blueHBox, textArea);
