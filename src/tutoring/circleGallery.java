@@ -20,9 +20,9 @@ import javafx.geometry.Insets;
             Circle circle = new Circle();
             Label heightLabel = new Label("Height:");
             TextField heightTextField = new TextField();
-            HBox heightHbox = new Hbox(5, heightLabel, heightTextField);
-            heightHbox.setAlignment(Pos.CENTER);
-            heightHbox.setPadding(new Insets(10,0,0,0));
+            HBox heightHBox = new HBox(5, heightLabel, heightTextField);
+            heightHBox.setAlignment(Pos.CENTER);
+            heightHBox.setPadding(new Insets(10,0,0,0));
 
             Button makeCircle = new Button("Create the Circle");
 //    circle.setCenterX(100);
