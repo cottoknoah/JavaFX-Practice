@@ -14,8 +14,6 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
-package sample;
-
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -66,7 +64,6 @@ public class circleGallery extends Application {
 
     }
 }
-
 
 //        3. In CircleGallery, make sure you have the required imports for building a JavaFX
 //        application as well as the imports for a TextField, Label, Button, Hbox, and VBox. You
