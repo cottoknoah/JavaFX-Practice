@@ -18,12 +18,12 @@ public class circleGallery extends Application {
     public void start(Stage primaryStage) {
         Circle circle = new Circle();
         Label radiusLabel = new Label("Radius:");
-        Label circDimensionsLabel = new Label("");
-        Label circOutputLabel =  new Label("");
+        Label dimensionsLabel = new Label("");
+        Label outputLabel =  new Label("");
         TextField radiusTextField = new TextField();
-        HBox heightHbox = new HBox (5, radiusLabel, radiusTextField);
-        heightHbox.setAlignment(Pos.CENTER);
-        heightHbox.setPadding(new Insets(10,0,0,0));
+        HBox heightHBox = new HBox (5, radiusLabel, radiusTextField);
+        heightHBox.setAlignment(Pos.CENTER);
+        heightHBox.setPadding(new Insets(10,0,0,0));
 
         Button makeCircle = new Button("Create the Circle");
 
@@ -32,15 +32,15 @@ public class circleGallery extends Application {
             {
                 circle.setRadius(Double.parseDouble(radiusTextField.getText()));
 
-                circDimensionsLabel.setText("Radius = " + circle.getRadius());
+                dimensionsLabel.setText("Radius = " + circle.getRadius());
 
-                circOutputLabel.setPadding(new Insets(circle.getRadius()));
+                outputLabel.setPadding(new Insets(circle.getRadius()));
 
-                circOutputLabel.setStyle("-fx-border-style: solid");
+                outputLabel.setStyle("-fx-border-style: solid");
             }
         });
 
-        VBox root = new VBox (10, heightHbox, makeCircle, circDimensionsLabel, circOutputLabel);
+        VBox root = new VBox (10, heightHBox, makeCircle, dimensionsLabel, outputLabel);
         root.setAlignment(Pos.TOP_CENTER);
         Scene scene = new Scene(root,500, 500);
         primaryStage.setScene(scene);
