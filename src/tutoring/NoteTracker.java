@@ -1,6 +1,6 @@
 package tutoring;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Iterator;
 
 import javafx.application.Application;
@@ -18,13 +18,13 @@ import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 
-import javafx.collections.ObservableList;
+//import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 
 public class NoteTracker extends Application {
-    // DECLARE AND CONSTRUCT ARRAYLIST OF LABELS
+    // DECLARE AND CONSTRUCT ARRAY LIST OF LABELS
     private TextField noteTextField = new TextField();
     private GridPane notesGrid = new GridPane();
 
@@ -83,7 +83,7 @@ public class NoteTracker extends Application {
                     children.remove();
             }
 
-            // IMPLEMENT SHOWEVENT'S HANDLE METHOD
+            // IMPLEMENT SHOW EVENT'S HANDLE METHOD
         }
     }
 }
