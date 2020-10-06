@@ -1,5 +1,7 @@
 [![Header]("Header")]
 
+# Still a work in progress...
+
 
 <!--  # Hi there!
 cottoknoah/cottoknoah is a ✨ _special_ ✨ repository because its README.md (this file) appears on your GitHub profile.
@@ -42,13 +44,12 @@ Here are some ideas to get you started:
 <!-- icons without padding -->
 
 [2.2]: http://i.imgur.com/9I6NRUm.png (github icon without padding)
-[3.2]: https://raw.githubusercontent.com/chrise08/chrise08/master/linkedin-3-16.png (LinkedIn icon without padding)
 
 
 <!-- links to your social media accounts -->
 
 [2]: https://github.com/cottoknoah
-[3]: https://www.linkedin.com/in/cme90/
+[3]: https://www.linkedin.com/in/cottoknoah/
 
 
 <!-- Resources -->
@@ -154,6 +155,6 @@ ___________________________
 <details>
   <summary>:zap: Github Stats</summary>
 
-  <img align="left" alt="codeSTACKr's Github Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=codeSTACKr&show_icons=true&hide_border=true" />
+  <img align="left" alt="Knoah's Github Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=cottoknoah&show_icons=true&hide_border=true" />
 
 </details>
