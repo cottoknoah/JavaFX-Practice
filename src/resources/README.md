@@ -30,7 +30,7 @@ Here are some ideas to get you started:
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chrise08&hide=java,html&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21" />
 </a>
 <a href="https://github.com/cottoknoah/cottoknoah">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=chrise08&show_icons=true&line_height=27&count_private=true&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21" alt="Chris' GitHub Stats" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=chrise08&show_icons=true&line_height=27&count_private=true&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21" alt="Knoah's GitHub Stats" />
 </a>
 
 <!-- links to social media icons -->
