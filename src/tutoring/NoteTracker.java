@@ -24,6 +24,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 
 public class NoteTracker extends Application {
+    // DECLARE AND CONSTRUCT ARRAYLIST OF LABELS
     private TextField noteTextField = new TextField();
     private GridPane notesGrid = new GridPane();
 
@@ -69,6 +70,7 @@ public class NoteTracker extends Application {
                     children.remove();
             }
 
+            // IMPLEMENT ADDEVENT'S HANDLE METHOD
         }
     }
 
@@ -81,6 +83,7 @@ public class NoteTracker extends Application {
                     children.remove();
             }
 
+            // IMPLEMENT SHOWEVENT'S HANDLE METHOD
         }
     }
 }
