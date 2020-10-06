@@ -1,42 +1,38 @@
 package tutoring;
 
 import java.util.ArrayList;
-        import java.util.Iterator;
+import java.util.Iterator;
 
-        import javafx.application.Application;
-        import javafx.scene.Scene;
-        import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-        import javafx.scene.layout.HBox;
-        import javafx.scene.layout.VBox;
-        import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
 
-        import javafx.scene.control.Button;
-        import javafx.scene.control.Label;
-        import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-        import javafx.geometry.Insets;
-        import javafx.geometry.Pos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 
-        import javafx.collections.ObservableList;
-        import javafx.event.ActionEvent;
-        import javafx.event.EventHandler;
-        import javafx.scene.Node;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
 
-public class NoteTracker extends Application
-{
-    // DECLARE AND CONSTRUCT ARRAYLIST OF LABELS
+public class NoteTracker extends Application {
     private TextField noteTextField = new TextField();
     private GridPane notesGrid = new GridPane();
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         Label noteLabel = new Label("New Note: ");
 
         HBox noteHBox = new HBox(5, noteLabel, noteTextField);
@@ -63,36 +59,28 @@ public class NoteTracker extends Application
         primaryStage.show();
     }
 
-    private class AddEvent implements EventHandler<ActionEvent>
-    {
-        public void handle(ActionEvent e)
-        {
+    private class AddEvent implements EventHandler<ActionEvent> {
+        public void handle(ActionEvent e) {
             // ADD COMMENTS ABOUT ITERATOR
-            for (Iterator<Node> children = notesGrid.getChildren().iterator(); children.hasNext(); )
-            {
+            for (Iterator<Node> children = notesGrid.getChildren().iterator(); children.hasNext(); ) {
                 Node node = children.next();
 
                 if (node != null)
                     children.remove();
             }
 
-            // IMPLEMENT ADDEVENT'S HANDLE METHOD
         }
     }
 
-    private class ShowEvent implements EventHandler<ActionEvent>
-    {
-        public void handle(ActionEvent e)
-        {
-            for (Iterator<Node> children = notesGrid.getChildren().iterator(); children.hasNext(); )
-            {
+    private class ShowEvent implements EventHandler<ActionEvent> {
+        public void handle(ActionEvent e) {
+            for (Iterator<Node> children = notesGrid.getChildren().iterator(); children.hasNext(); ) {
                 Node node = children.next();
 
                 if (node != null)
                     children.remove();
             }
 
-            // IMPLEMENT SHOWEVENT'S HANDLE METHOD
         }
     }
 }
