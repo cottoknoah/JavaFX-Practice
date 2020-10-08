@@ -63,7 +63,9 @@ public class NoteTracker extends Application {
                     children.remove();
             }
 
+
             // IMPLEMENT ADD EVENT'S HANDLE METHOD
+
         }
     }
 
