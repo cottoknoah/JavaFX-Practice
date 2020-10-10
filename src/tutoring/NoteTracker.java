@@ -1,6 +1,7 @@
 package tutoring;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -14,19 +15,22 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 
-public class NoteTracker extends Application {
-    // DECLARE AND CONSTRUCT ARRAY LIST OF LABELS
+public class NoteTracker extends Application
+{
+    // DECLARE AND CONSTRUCT ARRAYLIST OF LABELS
     private TextField noteTextField = new TextField();
     private GridPane notesGrid = new GridPane();
-
-    public static void main(String[] args) {
+    // public ArrayList[][] noteArrayList = new ArrayList[0][0];
+    public List<String> notes = new ArrayList<>();
+    public static void main(String[] args)
+    {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage)
+    {
         Label noteLabel = new Label("New Note: ");
 
         HBox noteHBox = new HBox(5, noteLabel, noteTextField);
@@ -53,32 +57,42 @@ public class NoteTracker extends Application {
         primaryStage.show();
     }
 
-    private class AddEvent implements EventHandler<ActionEvent> {
-        public void handle(ActionEvent e) {
-            // ADD COMMENTS ABOUT ITERATOR
-            for (Iterator<Node> children = notesGrid.getChildren().iterator(); children.hasNext(); ) {
-                Node node = children.next();
-
-                if (node != null)
-                    children.remove();
-            }
-
-
-            // IMPLEMENT ADD EVENT'S HANDLE METHOD
+    private class AddEvent implements EventHandler<ActionEvent>
+    {
+        public void handle(ActionEvent e)
+        {
+            notesGrid.getChildren().clear();  // clear the grid before adding to it
+            Label noteBoxLabel = new Label(noteTextField.getText());
+            notesGrid.add(noteBoxLabel, 0, 0); // add to grid, only display value user inputted at 0,0
+            notes.add(noteTextField.getText());      // add value user inputted to the listArray
 
         }
     }
 
-    private class ShowEvent implements EventHandler<ActionEvent> {
-        public void handle(ActionEvent e) {
-            for (Iterator<Node> children = notesGrid.getChildren().iterator(); children.hasNext(); ) {
-                Node node = children.next();
+    private class ShowEvent implements EventHandler<ActionEvent>
+    {
+        public void handle(ActionEvent e)
+        {
+            Integer row = 0;
+            Integer col = 0;
+            notesGrid.getChildren().clear();  // clear the grid before adding to it
 
-                if (node != null)
-                    children.remove();
+
+            for(Integer i = 0; i < notes.size(); i++) {
+                // if i % 3, means we have hit the end of row and we need to create a new row
+                if(i % 3 == 0) {
+                    row++;
+                    col = 0;
+                }
+                else {
+                    col++;
+                }
+//                System.out.println("Note: " + notes.get(i) +  " Pos: "  + col + "," + (row-1));
+                Label noteBoxLabel = new Label(notes.get(i));
+                notesGrid.add(noteBoxLabel, col, row-1); // add to grid, only display value user inputted at 0,0
             }
 
-            // IMPLEMENT SHOW EVENT'S HANDLE METHOD
+            // IMPLEMENT SHOWEVENT'S HANDLE METHOD
         }
     }
 }

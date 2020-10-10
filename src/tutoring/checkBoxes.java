@@ -1,5 +1,4 @@
 //this program forms three checkboxes changing one lines format
-
 package tutoring;
 
 //imported all necessary classes for this application
@@ -45,20 +44,19 @@ public class checkBoxes extends Application {
     }
 
     //    below is the function allowing a selected checked box to change the label accordingly
-    EventHandler handleCheckbox = new EventHandler<ActionEvent>()
-    {
+    EventHandler handleCheckbox = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
-            if (actionEvent.getSource() instanceof CheckBox){
+            if (actionEvent.getSource() instanceof CheckBox) {
                 checkBoxContents = "";
                 styleOpt = "";
-                if (chkBox1.isSelected()){
+                if (chkBox1.isSelected()) {
                     styleOpt += "-fx-font-weight: bold; ";
                 }
-                if (chkBox2.isSelected()){
+                if (chkBox2.isSelected()) {
                     styleOpt += "-fx-font-style: italic; ";
                 }
-                if (chkBox3.isSelected()){
+                if (chkBox3.isSelected()) {
                     styleOpt += "-fx-underline: true; ";
                 }
                 label.setStyle(styleOpt);
