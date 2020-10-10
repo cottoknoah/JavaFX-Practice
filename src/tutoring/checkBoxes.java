@@ -3,73 +3,107 @@
 package tutoring;
 
 //imported all necessary classes for this application
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.scene.layout.VBox;
+        import java.util.ArrayList;
+        import java.util.Iterator;
+        import java.util.List;
 
-public class checkBoxes extends Application {
-    //    declared variables in the global scope of the class
-    private String checkBoxContents = "";
-    private String styleOpt = "";
-    private Text label = new Text("Please select a checkbox or two.");
-    private CheckBox chkBox1 = new CheckBox("Bold");
-    private CheckBox chkBox2 = new CheckBox("Italicize");
-    private CheckBox chkBox3 = new CheckBox("Underline");
+        import javafx.application.Application;
+        import javafx.scene.Scene;
+        import javafx.stage.Stage;
+
+        import javafx.scene.layout.HBox;
+        import javafx.scene.layout.VBox;
+        import javafx.scene.layout.GridPane;
+
+        import javafx.scene.control.Button;
+        import javafx.scene.control.Label;
+        import javafx.scene.control.TextField;
+
+        import javafx.geometry.Insets;
+        import javafx.geometry.Pos;
+
+        import javafx.collections.ObservableList;
+        import javafx.event.ActionEvent;
+        import javafx.event.EventHandler;
+        import javafx.scene.Node;
+
+public class NoteTracker extends Application
+{
+    // DECLARE AND CONSTRUCT ARRAYLIST OF LABELS
+    private TextField noteTextField = new TextField();
+    private GridPane notesGrid = new GridPane();
+    // public ArrayList[][] noteArrayList = new ArrayList[0][0];
+    public List<String> notes = new ArrayList<>();
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
 
     @Override
-    public void start(Stage primaryStage) {
-//set the font of the label
-        label.setFont(new Font("Arial", 12));
+    public void start(Stage primaryStage)
+    {
+        Label noteLabel = new Label("New Note: ");
 
-//        event handler from below
-        chkBox1.setOnAction(handleCheckbox);
-        chkBox2.setOnAction(handleCheckbox);
-        chkBox3.setOnAction(handleCheckbox);
+        HBox noteHBox = new HBox(5, noteLabel, noteTextField);
+        noteHBox.setAlignment(Pos.CENTER);
+        noteHBox.setPadding(new Insets(10, 0, 0, 0));
 
-//        changed order of displayed label and checkboxes
-        VBox checkVbox = new VBox(20, label, chkBox1, chkBox2, chkBox3);
+        Button addNote = new Button("Add a Note");
+        Button showNotes = new Button("Show All Notes");
 
-        VBox vbox = new VBox(25, checkVbox);
+        notesGrid.setAlignment(Pos.CENTER);
+        notesGrid.setHgap(10);
+        notesGrid.setVgap(20);
 
-        Scene scene = new Scene(vbox, 200, 200);
+        addNote.setOnAction(new AddEvent());
+        showNotes.setOnAction(new ShowEvent());
+
+        VBox root = new VBox(10, noteHBox, addNote, showNotes, notesGrid);
+        root.setAlignment(Pos.TOP_CENTER);
+
+        Scene scene = new Scene(root, 500, 500);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Checkboxes");
+        primaryStage.setTitle("Note Tracker");
         primaryStage.show();
     }
 
-    //    below is the function allowing a selected checked box to change the label accordingly
-    EventHandler handleCheckbox = new EventHandler<ActionEvent>()
+    private class AddEvent implements EventHandler<ActionEvent>
     {
-        @Override
-        public void handle(ActionEvent actionEvent) {
-            if (actionEvent.getSource() instanceof CheckBox){
-                checkBoxContents = "";
-                styleOpt = "";
-                if (chkBox1.isSelected()){
-                    styleOpt += "-fx-font-weight: bold; ";
-                }
-                if (chkBox2.isSelected()){
-                    styleOpt += "-fx-font-style: italic; ";
-                }
-                if (chkBox3.isSelected()){
-                    styleOpt += "-fx-underline: true; ";
-                }
-                label.setStyle(styleOpt);
-            }
+        public void handle(ActionEvent e)
+        {
+            notesGrid.getChildren().clear();  // clear the grid before adding to it
+            Label noteBoxLabel = new Label(noteTextField.getText());
+            notesGrid.add(noteBoxLabel, 0, 0); // add to grid, only display value user inputted at 0,0
+            notes.add(noteTextField.getText());      // add value user inputted to the listArray
+
         }
-
-    };
-
-    //    main method
-    public static void main(String[] args) {
-        Application.launch(args);
     }
 
+    private class ShowEvent implements EventHandler<ActionEvent>
+    {
+        public void handle(ActionEvent e)
+        {
+            Integer row = 0;
+            Integer col = 0;
+            notesGrid.getChildren().clear();  // clear the grid before adding to it
+
+
+            for(Integer i = 0; i < notes.size(); i++) {
+                // if i % 3, means we have hit the end of row and we need to create a new row
+                if(i % 3 == 0) {
+                    row++;
+                    col = 0;
+                }
+                else {
+                    col++;
+                }
+//                System.out.println("Note: " + notes.get(i) +  " Pos: "  + col + "," + (row-1));
+                Label noteBoxLabel = new Label(notes.get(i));
+                notesGrid.add(noteBoxLabel, col, row-1); // add to grid, only display value user inputted at 0,0
+            }
+
+            // IMPLEMENT SHOWEVENT'S HANDLE METHOD
+        }
+    }
 }
