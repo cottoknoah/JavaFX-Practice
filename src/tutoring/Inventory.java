@@ -38,6 +38,17 @@ public class Inventory extends Application
         Button addButton = new Button("Add Item");
         Label outputLabel = new Label();
 
+        addButton.setOnAction(event -> {
+            // IMPLEMENT LAMBDA EXPRESSION FOR ADDBUTTON
+        });
 
+        VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
+        root.setAlignment(Pos.TOP_CENTER);
+
+        Scene scene = new Scene(root, 500, 500);
+
+        primaryStage.setTitle("Inventory");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }
