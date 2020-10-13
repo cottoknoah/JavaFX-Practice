@@ -18,7 +18,7 @@ import javafx.event.EventHandler;
 
 public class NoteTracker extends Application
 {
-    // DECLARE AND CONSTRUCT ARRAYLIST OF LABELS
+    // DECLARE AND CONSTRUCT ARRAY LIST OF LABELS
     private TextField noteTextField = new TextField();
     private GridPane notesGrid = new GridPane();
     // public ArrayList[][] noteArrayList = new ArrayList[0][0];
@@ -92,7 +92,7 @@ public class NoteTracker extends Application
                 notesGrid.add(noteBoxLabel, col, row-1); // add to grid, only display value user inputted at 0,0
             }
 
-            // IMPLEMENT SHOWEVENT'S HANDLE METHOD
+            // IMPLEMENT SHOW EVENT'S HANDLE METHOD
         }
     }
 }
