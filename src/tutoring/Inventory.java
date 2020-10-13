@@ -19,4 +19,25 @@ public class Inventory extends Application
         launch(args);
     }
 
+    @Override
+    public void start(Stage primaryStage)
+    {
+        //  ArrayList<Item> itemsList = new ArrayList<>();
+
+        Label nameLabel = new Label("Name: ");
+        TextField nameTextField = new TextField();
+        HBox nameHBox = new HBox(nameLabel, nameTextField);
+        nameHBox.setAlignment(Pos.CENTER);
+        nameHBox.setPadding(new Insets(10, 0, 0, 0));
+
+        Label priceLabel = new Label("Price: ");
+        TextField priceTextField = new TextField();
+        HBox priceHBox = new HBox(priceLabel, priceTextField);
+        priceHBox.setAlignment(Pos.CENTER);
+
+        Button addButton = new Button("Add Item");
+        Label outputLabel = new Label();
+
+
+    }
 }
