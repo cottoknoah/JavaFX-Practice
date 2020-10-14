@@ -55,10 +55,6 @@ public class Inventory extends Application
 //            {
 //              return true;
 //            }
-//            System.out.println(nameTextField.setText(Item);
-//            System.out.println(addButton);
-//            System.out.println(nameTextField);
-//            System.out.println(priceTextField);
 
         });
 
