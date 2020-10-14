@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
@@ -20,6 +21,24 @@ public class Inventory extends Application
     public String name;
     public double price;
 
+    //getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+
     public static void main(String[] args)
     {
         launch(args);
@@ -28,7 +47,8 @@ public class Inventory extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        //  ArrayList<Item> itemsList = new ArrayList<>();
+        Item item = new Item();
+        ArrayList<Item> itemsList = new ArrayList<>();
 
         Label nameLabel = new Label("Name: ");
         TextField nameTextField = new TextField();
@@ -46,6 +66,11 @@ public class Inventory extends Application
 
         addButton.setOnAction(event -> {
             // IMPLEMENT LAMBDA EXPRESSION FOR ADD BUTTON
+//            is an item being added ? boolean
+            if (!nameTextField.getName().equals(""))
+            {
+              return true;
+            }
         });
 
         VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
@@ -58,4 +83,7 @@ public class Inventory extends Application
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+
+
 }
