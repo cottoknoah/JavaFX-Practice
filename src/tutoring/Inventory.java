@@ -17,27 +17,8 @@ import java.util.ArrayList;
 
 public class Inventory extends Application
 {
-
     public String name;
     public double price;
-
-    //getters and setters
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
 
     public static void main(String[] args)
     {
@@ -48,6 +29,7 @@ public class Inventory extends Application
     public void start(Stage primaryStage)
     {
         Item item = new Item();
+
         ArrayList<Item> itemsList = new ArrayList<>();
 
         Label nameLabel = new Label("Name: ");
@@ -66,11 +48,18 @@ public class Inventory extends Application
 
         addButton.setOnAction(event -> {
             // IMPLEMENT LAMBDA EXPRESSION FOR ADD BUTTON
+
+            outputLabel.setText("The name of your item is " + nameTextField.getText()  + "is priced at " + priceTextField.getText());
 //            is an item being added ? boolean
-            if (!nameTextField.getName().equals(""))
-            {
-              return true;
-            }
+//            if (!itemsList.getName().equals(""))
+//            {
+//              return true;
+//            }
+//            System.out.println(nameTextField.setText(Item);
+//            System.out.println(addButton);
+//            System.out.println(nameTextField);
+//            System.out.println(priceTextField);
+
         });
 
         VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
@@ -78,12 +67,10 @@ public class Inventory extends Application
 
         Scene scene = new Scene(root, 500, 500);
 
-        System.out.println(scene);
+//        System.out.println(scene);
         primaryStage.setTitle("Inventory");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
-
 
 }
