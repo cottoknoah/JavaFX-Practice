@@ -1,6 +1,8 @@
 package tutoring;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
@@ -14,6 +16,10 @@ import java.util.ArrayList;
 
 public class Inventory extends Application
 {
+
+    public String name;
+    public double price;
+
     public static void main(String[] args)
     {
         launch(args);
@@ -39,7 +45,7 @@ public class Inventory extends Application
         Label outputLabel = new Label();
 
         addButton.setOnAction(event -> {
-            // IMPLEMENT LAMBDA EXPRESSION FOR ADDBUTTON
+            // IMPLEMENT LAMBDA EXPRESSION FOR ADD BUTTON
         });
 
         VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
@@ -47,6 +53,7 @@ public class Inventory extends Application
 
         Scene scene = new Scene(root, 500, 500);
 
+        System.out.println(scene);
         primaryStage.setTitle("Inventory");
         primaryStage.setScene(scene);
         primaryStage.show();
