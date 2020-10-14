@@ -32,4 +32,14 @@ public class Item {
     public void setPrice(double price) {
         this.price = price;
     }
+
+//    equals method
+    public boolean equals(Object obj) {
+        return (this == obj);
+    }
+
+    //    equals method
+    public boolean equals(Item item) {
+        return (this == item);
+    }
 }

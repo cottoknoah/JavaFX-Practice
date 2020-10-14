@@ -92,7 +92,6 @@ public class NoteTracker extends Application
                 notesGrid.add(noteBoxLabel, col, row-1); // add to grid, only display value user inputted at 0,0
             }
 
-            // IMPLEMENT SHOW EVENT'S HANDLE METHOD
         }
     }
 }
