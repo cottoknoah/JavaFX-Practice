@@ -39,7 +39,7 @@ public class Inventory extends Application
         Label outputLabel = new Label();
 
         addButton.setOnAction(event -> {
-            // IMPLEMENT LAMBDA EXPRESSION FOR ADDBUTTON
+            // IMPLEMENT LAMBDA EXPRESSION FOR ADD BUTTON
         });
 
         VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
@@ -47,6 +47,7 @@ public class Inventory extends Application
 
         Scene scene = new Scene(root, 500, 500);
 
+        System.out.println(scene);
         primaryStage.setTitle("Inventory");
         primaryStage.setScene(scene);
         primaryStage.show();
