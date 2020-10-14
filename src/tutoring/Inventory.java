@@ -38,10 +38,6 @@ public class Inventory extends Application
         this.price = price;
     }
 
-    //    equals method
-    public boolean equals(Item item) {
-        return (this == item);
-    }
 
     public static void main(String[] args)
     {
@@ -70,17 +66,11 @@ public class Inventory extends Application
 
         addButton.setOnAction(event -> {
             // IMPLEMENT LAMBDA EXPRESSION FOR ADD BUTTON
-//            if (!radiusTextField.getText().equals(""))
-//            {
-//                circle.setRadius(Double.parseDouble(radiusTextField.getText()));
-//
-//                dimensionsLabel.setText("Radius = " + circle.getRadius());
-//
-//                outputLabel.setPadding(new Insets(circle.getRadius()));
-//
-//                outputLabel.setStyle("-fx-border-style: solid");
-//            }
-
+//            is an item being added ? boolean
+            if (!nameTextField.getName().equals(""))
+            {
+              return true;
+            }
         });
 
         VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
@@ -93,6 +83,7 @@ public class Inventory extends Application
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 
 
 }
