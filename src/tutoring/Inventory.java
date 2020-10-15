@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import tutoring.Item;
+
 import java.util.ArrayList;
 
 public class Inventory extends Application
@@ -28,8 +30,6 @@ public class Inventory extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        Item item = new Item();
-
         ArrayList<Item> itemsList = new ArrayList<>();
 
         Label nameLabel = new Label("Name: ");
@@ -49,13 +49,23 @@ public class Inventory extends Application
         addButton.setOnAction(event -> {
             // IMPLEMENT LAMBDA EXPRESSION FOR ADD BUTTON
 
-            outputLabel.setText("The name of your item is " + nameTextField.getText()  + "is priced at " + priceTextField.getText());
-//            is an item being added ? boolean
-//            if (!itemsList.getName().equals(""))
-//            {
-//              return true;
-//            }
+            Boolean addItem = true;
 
+            Item newItem = new Item(nameTextField.getText(), priceTextField.getText());
+
+            for(Item i : itemsList) {
+                if(newItem.equals(i)) {
+                    addItem = false;
+                    break;
+                }
+            }
+
+            if(addItem == true) {
+                outputLabel.setText(newItem.toString());
+                itemsList.add(newItem);
+            } else {
+                outputLabel.setText("Failed to add existing item.");
+            }
         });
 
         VBox root = new VBox(10, nameHBox, priceHBox, addButton, outputLabel);
