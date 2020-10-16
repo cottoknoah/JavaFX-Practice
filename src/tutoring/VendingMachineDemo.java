@@ -13,15 +13,12 @@ import javafx.scene.control.Button;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
-public class VendingMachineDemo extends Application
-{
-    public static void main(String[] args)
-    {
+public class VendingMachineDemo extends Application {
+    public static void main(String[] args) {
         launch(args);
     }
 
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         Button addSodaBtn = new Button("Add a Soda");
         Button buySodaBtn = new Button("Buy a Soda");
         Label output = new Label("The vending machine is set up and has one soda in it.");
@@ -43,24 +40,24 @@ public class VendingMachineDemo extends Application
                 output.setText("The vending machine is empty.");
         });
 
-                HBox buttonRow = new HBox(20, addSodaBtn, buySodaBtn);
-                buttonRow.setPadding(new Insets(50, 0, 0, 0));
-                buttonRow.setAlignment(Pos.CENTER);
+        HBox buttonRow = new HBox(20, addSodaBtn, buySodaBtn);
+        buttonRow.setPadding(new Insets(50, 0, 0, 0));
+        buttonRow.setAlignment(Pos.CENTER);
 
-                VBox root = new VBox(20, buttonRow, output);
-                root.setAlignment(Pos.TOP_CENTER);
+        VBox root = new VBox(20, buttonRow, output);
+        root.setAlignment(Pos.TOP_CENTER);
 
-                Scene scene = new Scene(root, 700, 300);
+        Scene scene = new Scene(root, 700, 300);
 
-                scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
-                addSodaBtn.getStyleClass().add("add-button");
-                buySodaBtn.getStyleClass().add("buy-button");
+        scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
+        addSodaBtn.getStyleClass().add("add-button");
+        buySodaBtn.getStyleClass().add("buy-button");
 
-                primaryStage.setScene(scene);
-                primaryStage.setTitle("Vending Machine");
-                primaryStage.show();
-            }
-        }
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Vending Machine");
+        primaryStage.show();
+    }
+}
 
 
 /*
