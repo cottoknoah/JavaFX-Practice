@@ -42,3 +42,37 @@ public class VendingMachineDemo extends Application
             else
                 output.setText("The vending machine is empty.");
         });
+
+                HBox buttonRow = new HBox(20, addSodaBtn, buySodaBtn);
+                buttonRow.setPadding(new Insets(50, 0, 0, 0));
+                buttonRow.setAlignment(Pos.CENTER);
+
+                VBox root = new VBox(20, buttonRow, output);
+                root.setAlignment(Pos.TOP_CENTER);
+
+                Scene scene = new Scene(root, 700, 300);
+
+                scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
+                addSodaBtn.getStyleClass().add("add-button");
+                buySodaBtn.getStyleClass().add("buy-button");
+
+                primaryStage.setScene(scene);
+                primaryStage.setTitle("Vending Machine");
+                primaryStage.show();
+            }
+        }
+
+
+/*
+.root {
+        -fx-font-size: 24px;
+    }
+
+.add-button {
+        -fx-background-color: green;
+        -fx-text-fill: white;
+    }
+
+.buy-button {
+        -fx-background-color: yellow;
+    }*/
