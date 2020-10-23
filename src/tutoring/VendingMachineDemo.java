@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
-public class VendingMachineMain extends Application
+public class VendingMachineDemo extends Application
 {
     public static void main(String[] args)
     {
