@@ -60,16 +60,4 @@ public class VendingMachineDemo extends Application {
 }
 
 
-/*
-.root {
-        -fx-font-size: 24px;
-    }
 
-.add-button {
-        -fx-background-color: green;
-        -fx-text-fill: white;
-    }
-
-.buy-button {
-        -fx-background-color: yellow;
-    }*/
