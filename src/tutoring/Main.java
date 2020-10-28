@@ -21,6 +21,7 @@ public class Main {
         System.out.println(CaesarDecrypt(message2Encrypt));
 
 
+
     }
 
     public static char[] CaesarEncrypt(char[] arr) {
@@ -48,5 +49,28 @@ public class Main {
         return arr;
     }
 
-
+    public static char[] CaesarDecrypt(char[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int ascii = (int) arr[i] - 65;
+            // A to X
+            if (ascii == 0) {
+                ascii = 23;
+            }
+            // B to Y
+            else if(ascii == 1) {
+                ascii = 24;
+            }
+            // C to Z
+            else if(ascii == 2) {
+                ascii = 25;
+            }
+            // All other letters that do not rotate
+            else {
+                ascii = ascii - 3;
+            }
+            ascii += 65;
+            arr[i] = (char) ascii;
+        }
+        return arr;
+    }
 }
