@@ -97,4 +97,12 @@ public class Main {
             }
         }
 
+        // iterate through array, perform inverse f-1(p) = (p-b)/ a mod 26
+        for (int i = 0; i < arr.length; i++) {
+            // Use 'A' to bring within range of ASCII
+            arr[i] = (char) (((inverse * ((arr[i] + 'A' - b)) % 26)) + 'A');
+        }
+        return arr;
+    }
+
 }
