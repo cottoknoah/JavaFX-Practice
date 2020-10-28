@@ -73,4 +73,28 @@ public class Main {
         }
         return arr;
     }
+
+    public static char[] affineEncrypt(char[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int ascii = (int) arr[i] - 65;
+            ascii = (3*ascii) + 5;
+            ascii %= 26;
+            ascii += 65;
+            arr[i]= (char) ascii;
+        }
+        return arr;
+    }
+
+    public static char[] affineDecrypt(char[] arr) {
+        int inverse = 0;
+        int flag = 0;
+
+        // Find multiplicative inverse of a
+        for(int i = 0; i < 26; i++) {
+            flag = (a * i) % 26;
+            if(flag == 1) {
+                inverse = i;
+            }
+        }
+
 }
