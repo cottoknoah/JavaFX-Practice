@@ -20,8 +20,6 @@ public class Main {
         System.out.println(CaesarDecrypt(message1Encrypt));
         System.out.println(CaesarDecrypt(message2Encrypt));
 
-
-
     }
 
     public static char[] CaesarEncrypt(char[] arr) {
@@ -91,7 +89,7 @@ public class Main {
 
         // Find multiplicative inverse of a
         for(int i = 0; i < 26; i++) {
-            flag = (a * i) % 26;
+            flag = (inverse * i) % 26;
             if(flag == 1) {
                 inverse = i;
             }
@@ -100,7 +98,7 @@ public class Main {
         // iterate through array, perform inverse f-1(p) = (p-b)/ a mod 26
         for (int i = 0; i < arr.length; i++) {
             // Use 'A' to bring within range of ASCII
-            arr[i] = (char) (((inverse * ((arr[i] + 'A' - b)) % 26)) + 'A');
+            arr[i] = (char) (((inverse * ((arr[i] + 'A' - inverse)) % 26)) + 'A');
         }
         return arr;
     }
