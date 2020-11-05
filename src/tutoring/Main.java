@@ -20,8 +20,6 @@ public class Main {
         System.out.println(CaesarDecrypt(message1Encrypt));
         System.out.println(CaesarDecrypt(message2Encrypt));
 
-
-
     }
 
     public static char[] CaesarEncrypt(char[] arr) {
@@ -73,4 +71,36 @@ public class Main {
         }
         return arr;
     }
+
+    public static char[] affineEncrypt(char[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int ascii = (int) arr[i] - 65;
+            ascii = (3*ascii) + 5;
+            ascii %= 26;
+            ascii += 65;
+            arr[i]= (char) ascii;
+        }
+        return arr;
+    }
+
+    public static char[] affineDecrypt(char[] arr) {
+        int inverse = 0;
+        int flag = 0;
+
+        // Find multiplicative inverse of a
+        for(int i = 0; i < 26; i++) {
+            flag = (inverse * i) % 26;
+            if(flag == 1) {
+                inverse = i;
+            }
+        }
+
+        // iterate through array, perform inverse f-1(p) = (p-b)/ a mod 26
+        for (int i = 0; i < arr.length; i++) {
+            // Use 'A' to bring within range of ASCII
+            arr[i] = (char) (((inverse * ((arr[i] + 'A' - inverse)) % 26)) + 'A');
+        }
+        return arr;
+    }
+
 }
