@@ -42,11 +42,42 @@ public class BugGallery extends Application {
         imageView.setPreserveRatio(true);
 
         // button click handlers
-
+        antBtn.setOnAction(event -> {
+            this.bug = new Ant();
+            imageView.setImage(antImg);
+            output.setText(this.bug.toString());
+        });
+        beeBtn.setOnAction(event -> {
+            this.bug = new Bee();
+            imageView.setImage(beeImg);
+            output.setText(this.bug.toString());
+        });
+        spiderBtn.setOnAction(event -> {
+            this.bug = new Spider();
+            imageView.setImage(spiderImg);
+            output.setText(this.bug.toString());
+        });
+        scorpionBtn.setOnAction(event -> {
+            this.bug = new Scorpion();
+            imageView.setImage(scorpImg);
+            output.setText(this.bug.toString());
+        });
 
 
         // Create the scene
+        VBox vbox = new VBox(8);
+        HBox buttonRowInsect = new HBox(20, antBtn, beeBtn);
+        HBox buttonRowArachnid = new HBox(20, spiderBtn, scorpionBtn);
+        buttonRowInsect.setPadding(new Insets(50, 0, 0, 0));
+        buttonRowInsect.setAlignment(Pos.CENTER);
+        buttonRowArachnid.setPadding(new Insets(50, 0, 0, 0));
+        buttonRowArachnid.setAlignment(Pos.CENTER);
 
+        vbox.getChildren().addAll(imageView, output, buttonRowInsect, buttonRowArachnid);
+
+        primaryStage.setTitle("Bug Gallery");
+        primaryStage.setScene(new Scene(vbox, 800, 600));
+        primaryStage.show();
     }
 
 
