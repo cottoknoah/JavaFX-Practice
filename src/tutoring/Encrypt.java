@@ -43,7 +43,19 @@ public class Encrypt {
                     tempArr[3] = (char)((int) val ^ xorKey);
                     break;
             }
-
+            // if at end of block
+            if(pos == 4) {
+                pos = 0;
+                // add block to newArr
+                for(int x = 0; x < 5; x++) {
+                    newArr[loc+x] = tempArr[x];
+                }
+                // adjust loc
+                loc += 5;
+            } else {
+                pos++;
+            }
+        }
 
         return newArr;
     }
