@@ -19,6 +19,33 @@ public class Encrypt {
         int loc = 0; // location of tempArr
         for(int i = 0; i < size; i++) {
             char val;
+            // Determine if need to fill with X
+            if(i >= arr.length) {
+                val = 'X';
+            } else {
+                val = arr[i];
+            }
+            System.out.println((int)val ^ xorKey);
+            switch (pos) {
+                case 0:
+                    tempArr[2] = (char)((int) val ^ xorKey);
+                    break;
+                case 1:
+                    tempArr[4] = (char)((int) val ^ xorKey);
+                    break;
+                case 2:
+                    tempArr[0] = (char)((int) val ^ xorKey);
+                    break;
+                case 3:
+                    tempArr[1] = (char)((int) val ^ xorKey);
+                    break;
+                case 4:
+                    tempArr[3] = (char)((int) val ^ xorKey);
+                    break;
+            }
 
+
+        return newArr;
+    }
 
 }
