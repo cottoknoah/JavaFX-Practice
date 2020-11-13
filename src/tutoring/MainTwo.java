@@ -19,7 +19,14 @@ public class MainTwo {
     private static char[] message4 = {'G', 'R', 'I', 'Z', 'Z', 'L', 'Y', ' ', 'B', 'E', 'A', 'R', 'S'};
 
     public static void main(String[] args) {
-
+        Encrypt encrypt = new Encrypt();
+        Decrypt decrypt = new Decrypt();
+        char [] message4Encrypt = encrypt.blockEncrypt(message4);
+        System.out.println("blockEncrypt: ");
+        System.out.println(message4Encrypt);
+        System.out.println("==========");
+        System.out.println("blockDecrypt: ");
+        System.out.println(decrypt.blockDecrypt(message4Encrypt));
     }
 
 }
