@@ -10,7 +10,7 @@ public class Decrypt {
     public static char[] blockDecrypt(char[] arr) {
         int size = arr.length;
 
-
+        // round up size for blocks of 5
         while(size % 5 != 0) {
             size++;
         }
@@ -21,7 +21,7 @@ public class Decrypt {
         int loc = 0; // location of tempArr
         for(int i = 0; i < size; i++) {
             char val;
-
+            // Determine if need to fill with X
             if(i >= arr.length) {
                 val = 'X';
             } else {
@@ -45,14 +45,14 @@ public class Decrypt {
                     tempArr[4] = (char)((int) val ^ xorKey);
                     break;
             }
-
+            // if at end of block
             if(pos == 4) {
                 pos = 0;
-
+                // add block to newArr
                 for(int x = 0; x < 5; x++) {
                     newArr[loc+x] = tempArr[x];
                 }
-
+                // adjust loc
                 loc += 5;
             } else {
                 pos++;
