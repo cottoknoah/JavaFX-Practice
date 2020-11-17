@@ -8,4 +8,5 @@
 - Follow PDF guidelines in resource files
 - Practice Logic and Algorithms
 - Use built in methods
+- Assist in semester projects
 - Mentor others in setting up IDEA configurations and structure best practices 
