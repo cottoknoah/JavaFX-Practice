@@ -7,3 +7,37 @@
     -fx-text-fill: #111;
 }
 
+.write-button {
+    -fx-background-color: #FFFF33;
+    -fx-text-fill: #111;
+}
+
+.read-button {
+    -fx-background-color: #3333FF;
+    -fx-text-fill: #EEE;
+}
+
+.delete-button {
+    -fx-background-color: #FF3333;
+    -fx-text-fill: #EEE;
+}
+
+.create-button:hover {
+    -fx-background-color: #00CC00;
+    -fx-text-fill: #111;
+}
+
+.write-button:hover {
+    -fx-background-color: #CCCC00;
+    -fx-text-fill: #111;
+}
+
+.read-button:hover {
+    -fx-background-color: #0000CC;
+    -fx-text-fill: #EEE;
+}
+
+.delete-button:hover {
+    -fx-background-color: #CC0000;
+    -fx-text-fill: #EEE;
+}
