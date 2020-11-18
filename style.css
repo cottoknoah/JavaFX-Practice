@@ -1,0 +1,9 @@
+.root {
+    -fx-font-size: 20px;
+}
+
+.create-button {
+    -fx-background-color: #33FF33;
+    -fx-text-fill: #111;
+}
+
