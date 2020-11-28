@@ -55,5 +55,26 @@ public class InventoryTwo extends Application
             outputLabel.setText(itemsList.get(pos).toString());
         });
 
+        showButton.setOnAction(event -> {
+            String output = "";
+
+            for (Item item : itemsList)
+            {
+                output += item + "\n";
+            }
+
+            outputLabel.setText(output);
+        });
+
+        VBox root = new VBox(10, nameHBox, addButton, showButton, outputLabel);
+        root.setAlignment(Pos.TOP_CENTER);
+
+        Scene scene = new Scene(root, 500, 500);
+
+        primaryStage.setTitle("Inventory");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
 
 }
