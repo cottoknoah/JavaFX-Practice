@@ -76,5 +76,13 @@ public class InventoryTwo extends Application
         primaryStage.show();
     }
 
+    // IMPLEMENT SELECTION SORT METHOD
+    void selectionSort(ArrayList<Item> arr)
+    {
+        int n = arr.size();
+
+        // One by one move boundary of unsorted subarray
+        for (int i = 0; i < n-1; i++)
+        {
 
 }
