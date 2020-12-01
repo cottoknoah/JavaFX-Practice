@@ -55,30 +55,30 @@ public class FileHandlerGUI extends Application
         deleteFile.getStyleClass().add("delete-button");
 
         // Call the createFile method and get the message for the feedback label
-        createFile.setOnAction(event -> {
-            message = filehandler.makeFile(fileName.getText());
-            feedbackLabel.setText(message);
-        });
-
-        // Call the writeFile method and get the message for the feedback label
-        writeFile.setOnAction(event -> {
-            message = filehandler.writeFile(fileName.getText(), fileContent.getText());
-            feedbackLabel.setText(message);
-        });
-
-        // Call the readFile method
-        // Get the message for the feedback label and the content for the text area
-        readFile.setOnAction(event -> {
-            messageAndContent = filehandler.readFile(fileName.getText());
-            fileContent.setText(messageAndContent[0]);
-            feedbackLabel.setText(messageAndContent[1]);
-        });
-
-        // Call the deleteFile method and get the message for the feedback label
-        deleteFile.setOnAction(event -> {
-            message = filehandler.deleteFile(fileName.getText());
-            feedbackLabel.setText(message);
-        });
+//        createFile.setOnAction(event -> {
+//            message = filehandler.makeFile(fileName.getText());
+//            feedbackLabel.setText(message);
+//        });
+//
+//        // Call the writeFile method and get the message for the feedback label
+//        writeFile.setOnAction(event -> {
+//            message = filehandler.writeFile(fileName.getText(), fileContent.getText());
+//            feedbackLabel.setText(message);
+//        });
+//
+//        // Call the readFile method
+//        // Get the message for the feedback label and the content for the text area
+//        readFile.setOnAction(event -> {
+//            messageAndContent = filehandler.readFile(fileName.getText());
+//            fileContent.setText(messageAndContent[0]);
+//            feedbackLabel.setText(messageAndContent[1]);
+//        });
+//
+//        // Call the deleteFile method and get the message for the feedback label
+//        deleteFile.setOnAction(event -> {
+//            message = filehandler.deleteFile(fileName.getText());
+//            feedbackLabel.setText(message);
+//        });
 
         // Create the scene and set up the style
         Scene scene = new Scene(root, 1200, 600);

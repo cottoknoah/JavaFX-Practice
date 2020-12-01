@@ -1,6 +1,5 @@
 package tutoring;
 
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -46,7 +45,7 @@ public class InventoryTwo extends Application
                 itemsList.add(item);
                 pos = itemsList.size() - 1;
             } else {
-                itemsList.get(pos).incrementQuantity();
+//                itemsList.get(pos).incrementQuantity();
             }
             outputLabel.setText(itemsList.get(pos).toString());
         });
@@ -83,7 +82,7 @@ public class InventoryTwo extends Application
             // Find the minimum element in unsorted array
             int min_idx = i;
             for (int j = i+1; j < n; j++)
-                if (arr.get(j).compareItems(arr.get(min_idx)) < 0)
+//                if (arr.get(j).compareItems(arr.get(min_idx)) < 0)
                     min_idx = j;
 
             // Swap the found minimum element with the first
@@ -96,24 +95,24 @@ public class InventoryTwo extends Application
 
 
     // IMPLEMENT BINARY SEARCH METHOD
-    int binarySearch(ArrayList<Item> arr, Item key)
-    {
-        int start = 0;
-        int end = arr.size() - 1;
-        int mid = 0;
-
-        while (start <= end) {
-            mid = (start + end) / 2;
-            if (arr.get(mid).compareItems(key) < 0) {
-                start = mid + 1;
-            }
-            else if(arr.get(mid).compareItems(key) > 0) {
-                end = mid - 1;
-            }
-            else {
-                return mid;
-            }
-        }
-        return -1;
-    }
+//    int binarySearch(ArrayList<Item> arr, Item key)
+//    {
+//        int start = 0;
+//        int end = arr.size() - 1;
+//        int mid = 0;
+//
+//        while (start <= end) {
+//            mid = (start + end) / 2;
+////            if (arr.get(mid).compareItems(key) < 0) {
+//                start = mid + 1;
+//            }
+////            else if(arr.get(mid).compareItems(key) > 0) {
+//                end = mid - 1;
+//            }
+//            else {
+//                return mid;
+//            }
+//        }
+//        return -1;
+//    }
 }
