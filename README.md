@@ -10,3 +10,7 @@
 - Use built in methods
 - Assist in semester projects
 - Mentor others in setting up IDEA configurations and structure best practices 
+
+# Install
+
+- JavaFX in global library of IDEA
