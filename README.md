@@ -13,4 +13,4 @@
 
 # Install
 
-- JavaFX in global library of IDEA
+- JavaFX in global library of IDEA : https://openjfx.io/
