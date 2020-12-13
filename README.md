@@ -16,6 +16,10 @@
 
 - JavaFX in global library: https://openjfx.io/
 
-# YouTube guidance
+# YouTube References
 
 - Lab 11 https://youtu.be/nnw5KrV8m3k
+
+# Project Video
+
+- https://www.youtube.com/watch?v=bzNbEbq-1TM&feature=youtu.be
