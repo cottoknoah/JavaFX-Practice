@@ -1,7 +1,8 @@
 # JavaFX-Practice
 
 ## Purpose
-- A personal repo built for practicing JavaFX.
+- A personal repo built for practicing JavaFX
+
 
 # Tasks
 
@@ -14,3 +15,7 @@
 # Install
 
 - JavaFX in global library: https://openjfx.io/
+
+# YouTube guidance
+
+- Lab 11 https://youtu.be/nnw5KrV8m3k
