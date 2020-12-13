@@ -18,6 +18,7 @@
 
 # YouTube References
 
+- Lab 10 https://www.youtube.com/watch?v=l7_Cl-8ZLGk&feature=youtu.be
 - Lab 11 https://youtu.be/nnw5KrV8m3k
 
 # Project Video
