@@ -93,26 +93,26 @@ public class InventoryTwo extends Application
         }
     }
 
-
+//why is there an error still?
     // IMPLEMENT BINARY SEARCH METHOD
-//    int binarySearch(ArrayList<Item> arr, Item key)
-//    {
-//        int start = 0;
-//        int end = arr.size() - 1;
-//        int mid = 0;
-//
-//        while (start <= end) {
-//            mid = (start + end) / 2;
-////            if (arr.get(mid).compareItems(key) < 0) {
-//                start = mid + 1;
-//            }
-////            else if(arr.get(mid).compareItems(key) > 0) {
-//                end = mid - 1;
-//            }
-//            else {
-//                return mid;
-//            }
-//        }
-//        return -1;
-//    }
+    int binarySearch(ArrayList<Item> arr, Item key)
+    {
+        int start = 0;
+        int end = arr.size() - 1;
+        int mid = 0;
+
+        while (start <= end) {
+            mid = (start + end) / 2;
+//            if (arr.get(mid).compareItems(key) < 0) {
+                start = mid + 1;
+            }
+//            else if(arr.get(mid).compareItems(key) > 0) {
+                end = mid - 1;
+            }
+            else {
+                return midway;
+            }
+        }
+        return -1;
+    }
 }
