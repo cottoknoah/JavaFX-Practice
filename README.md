@@ -1,8 +1,7 @@
 # JavaFX-Practice
 
 ## Purpose
-- A personal repo built for practicing JavaFX
-
+- A personal repo built for practicing JavaFX 
 
 # Tasks
 
@@ -16,7 +15,7 @@
 
 - JavaFX in global library: https://openjfx.io/
 
-# YouTube References
+# YouTube References From A&M Coding Introduction class
 
 - Lab 05 https://www.youtube.com/watch?v=iaNPE7CKGxc&feature=youtu.be
 - Lab 06 https://www.youtube.com/watch?v=MsYDTkBKTV0&feature=youtu.be
