@@ -32,6 +32,7 @@ public class InventoryTwo extends Application
 
         Button addButton = new Button("Add Item");
         Button showButton = new Button("Show All Items");
+        Button editButton = new Button("Edit Items");
         Label outputLabel = new Label();
 
         addButton.setOnAction(event -> {
