@@ -102,7 +102,15 @@ public class InventoryTwo extends Application
         {
             // Find the minimum element in edited array
             int min_idx = i;
+            for (int j = i+1; j < n; j++)
+//                if (arr.get(j).compareItems(arr.get(min_idx)) < 0)
+                min_idx = j;
 
+            // Swap the found minimum element with the first
+            // element
+            Item temp = arr.get(min_idx);
+            arr.set(min_idx, arr.get(i));
+            arr.set(i,temp);
         }
     }
 
