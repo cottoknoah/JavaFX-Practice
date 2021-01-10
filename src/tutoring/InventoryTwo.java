@@ -93,6 +93,7 @@ public class InventoryTwo extends Application
             arr.set(i,temp);
         }
     }
+
     void selectionEdit(ArrayList<Item> arr)
     {
         int n = arr.size();
@@ -108,11 +109,13 @@ public class InventoryTwo extends Application
 
             // Swap the found minimum element with the first
             // element
+
             Item temp = arr.get(min_idx);
             arr.set(min_idx, arr.get(i));
             arr.set(i,temp);
         }
     }
+
 
     // IMPLEMENT BINARY SEARCH METHOD
     int binarySearch(ArrayList<Item> arr, Item key)
