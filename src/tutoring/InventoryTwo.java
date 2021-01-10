@@ -94,6 +94,29 @@ public class InventoryTwo extends Application
         }
     }
 
+    void selectionEdit(ArrayList<Item> arr)
+    {
+        int n = arr.size();
+
+        // One by one move boundary of edited subarray
+        for (int i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in edited array
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+//                if (arr.get(j).compareItems(arr.get(min_idx)) < 0)
+                min_idx = j;
+
+            // Swap the found minimum element with the first
+            // element
+
+            Item temp = arr.get(min_idx);
+            arr.set(min_idx, arr.get(i));
+            arr.set(i,temp);
+        }
+    }
+
+
     // IMPLEMENT BINARY SEARCH METHOD
     int binarySearch(ArrayList<Item> arr, Item key)
     {
@@ -109,10 +132,10 @@ public class InventoryTwo extends Application
 //            else if(arr.get(mid).compareItems(key) > 0) {
                 end = mid - 1;
             }
-//            else {
-//                return midway;
-//            }
-//        }
-//        return -1;
-//    }
+            else {
+                return midway;
+            }
+        }
+        return -1;
+    }
 }
