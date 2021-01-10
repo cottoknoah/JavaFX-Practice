@@ -132,10 +132,10 @@ public class InventoryTwo extends Application
 //            else if(arr.get(mid).compareItems(key) > 0) {
                 end = mid - 1;
             }
-//            else {
-//                return midway;
-//            }
-//        }
-//        return -1;
-//    }
+            else {
+                return midway;
+            }
+        }
+        return -1;
+    }
 }
