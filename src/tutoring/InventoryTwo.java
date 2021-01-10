@@ -93,6 +93,18 @@ public class InventoryTwo extends Application
             arr.set(i,temp);
         }
     }
+    void selectionEdit(ArrayList<Item> arr)
+    {
+        int n = arr.size();
+
+        // One by one move boundary of edited subarray
+        for (int i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in edited array
+            int min_idx = i;
+
+        }
+    }
 
     // IMPLEMENT BINARY SEARCH METHOD
     int binarySearch(ArrayList<Item> arr, Item key)
