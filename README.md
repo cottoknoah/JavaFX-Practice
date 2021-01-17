@@ -10,7 +10,8 @@
 - Practice Algorithms
 - Use built in methods
 - Assist in semester projects
-- Mentor others in setting up IDEA configurations and structure best practices 
+- Mentor others in setting up IDEA configurations
+- Practice structure best practices 
 
 # Install
 
