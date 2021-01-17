@@ -21,6 +21,8 @@
 
 - Lab 01
 - Lab 02
+- Lab 03
+- Lab 04
 - To be determined
 
 - Lab 05 https://www.youtube.com/watch?v=iaNPE7CKGxc&feature=youtu.be
