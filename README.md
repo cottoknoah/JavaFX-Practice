@@ -6,7 +6,8 @@
 # Tasks
 
 - Follow PDF guidelines in resource files
-- Practice Logic and Algorithms
+- Practice Logic 
+- Practice Algorithms
 - Use built in methods
 - Assist in semester projects
 - Mentor others in setting up IDEA configurations and structure best practices 
