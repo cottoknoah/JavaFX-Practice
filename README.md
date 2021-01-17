@@ -19,7 +19,9 @@
 
 # YouTube References From A&M Coding Introduction class
 
-- Lab 01 - Lab 04 To be determined
+- Lab 01
+- Lab 02
+- To be determined
 
 - Lab 05 https://www.youtube.com/watch?v=iaNPE7CKGxc&feature=youtu.be
 - Lab 06 https://www.youtube.com/watch?v=MsYDTkBKTV0&feature=youtu.be
