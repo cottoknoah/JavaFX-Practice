@@ -1,4 +1,4 @@
-# JavaFX-Practice
+# JavaFX-Turtoring
 
 ## Purpose
 - A personal repo built for practicing JavaFX 
